@@ -16,7 +16,6 @@ import site.nomoreparties.stellarburgers.SupportData.BrowserType;
 import site.nomoreparties.stellarburgers.pageobjects.MainPage;
 
 import static org.hamcrest.CoreMatchers.not;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 @RunWith(Parameterized.class)

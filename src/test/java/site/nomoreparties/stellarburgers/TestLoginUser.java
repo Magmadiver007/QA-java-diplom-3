@@ -18,8 +18,9 @@ import site.nomoreparties.stellarburgers.restclients.User;
 import site.nomoreparties.stellarburgers.restclients.UserClient;
 import site.nomoreparties.stellarburgers.restclients.UserGenerator;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
+
 @RunWith(Parameterized.class)
 public class TestLoginUser {
     private WebDriver driver;
@@ -76,7 +77,7 @@ public class TestLoginUser {
         loginPage.enterEmailField(user.getEmail());
         loginPage.enterPasswordField(user.getPassword());
         loginPage.clickLoginButton();
-        assertEquals(true,mainPage.isCreateOrderButton());
+        assertTrue(mainPage.isCreateOrderButton());
     }
     @Test
     @DisplayName("Тест логина через скнопку Личный кабинет")
@@ -88,7 +89,7 @@ public class TestLoginUser {
         loginPage.enterEmailField(user.getEmail());
         loginPage.enterPasswordField(user.getPassword());
         loginPage.clickLoginButton();
-        assertEquals(true,mainPage.isCreateOrderButton());
+        assertTrue(mainPage.isCreateOrderButton());
     }
     @Test
     @DisplayName("Тест логина через страницу регистрации")
@@ -101,7 +102,7 @@ public class TestLoginUser {
         loginPage.enterEmailField(user.getEmail());
         loginPage.enterPasswordField(user.getPassword());
         loginPage.clickLoginButton();
-        assertEquals(true,mainPage.isCreateOrderButton());
+        assertTrue(mainPage.isCreateOrderButton());
 
     }
     @Test
@@ -115,7 +116,7 @@ public class TestLoginUser {
         loginPage.enterEmailField(user.getEmail());
         loginPage.enterPasswordField(user.getPassword());
         loginPage.clickLoginButton();
-        assertEquals(true,mainPage.isCreateOrderButton());
+        assertTrue(mainPage.isCreateOrderButton());
 
     }
 

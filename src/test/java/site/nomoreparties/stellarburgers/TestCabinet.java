@@ -8,12 +8,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import site.nomoreparties.stellarburgers.SupportData.BrowserType;
 import site.nomoreparties.stellarburgers.pageobjects.LoginPage;
 import site.nomoreparties.stellarburgers.pageobjects.MainPage;
@@ -22,8 +19,8 @@ import site.nomoreparties.stellarburgers.restclients.User;
 import site.nomoreparties.stellarburgers.restclients.UserClient;
 import site.nomoreparties.stellarburgers.restclients.UserGenerator;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 
 @RunWith(Parameterized.class)
@@ -85,9 +82,9 @@ public class TestCabinet {
         ProfilePage profilePage = new ProfilePage(driver);
         profilePage.waitForPageLoaded();
         assertEquals(profilePage.getURL(),driver.getCurrentUrl());
-        assertEquals(true,profilePage.isProfileButton());
-        assertEquals(true,profilePage.isHistoryButton());
-        assertEquals(true,profilePage.isPLogoutButton());
+        assertTrue(profilePage.isProfileButton());
+        assertTrue(profilePage.isHistoryButton());
+        assertTrue(profilePage.isPLogoutButton());
         assertEquals(user.getName(),profilePage.getName());
         assertEquals(user.getEmail().toLowerCase(),profilePage.getEmail());
     }
@@ -101,7 +98,7 @@ public class TestCabinet {
         profilePage.constructorButtonClick();
         mainPage.waitForPageLoadedAuthorized();
         assertEquals(mainPage.getURL(),driver.getCurrentUrl());
-        assertEquals(true,mainPage.isCreateOrderButton());
+        assertTrue(mainPage.isCreateOrderButton());
 
     }
     @Test
@@ -114,7 +111,7 @@ public class TestCabinet {
         profilePage.logoButtonClick();
         mainPage.waitForPageLoadedAuthorized();
         assertEquals(mainPage.getURL(),driver.getCurrentUrl());
-        assertEquals(true,mainPage.isCreateOrderButton());
+        assertTrue(mainPage.isCreateOrderButton());
     }
     @Test
     @DisplayName("Тест выхода из аккаунта")
